@@ -1,0 +1,58 @@
+<div class="container mt-3">
+    <h1>{{ titulo }}</h1>
+    <form>
+        <div class="form-groud">
+            <label for="formGroupNombreInput">Nombre</label>
+            <input type="text" name="nombres" class="form-control" id="formGroupNombreInput" placeholder=""  [(ngModel)]="turista.nombre"  required #nombre="ngModel">
+        </div>
+        <br>
+        <div class="form-groud">
+            <label for="formGroupNombreInput">Fecha de nacimiento</label>
+            <input type="text" name="fecha" class="form-control" id="formGroupNombreInput" placeholder=""  [(ngModel)]="turista.fecha"  required #fecha="ngModel">
+        </div>
+        <br>
+        <div class="form-groud">
+            <label for="formGroupNombreInput">Identificacion</label>
+            <input type="text" name="identificacion" class="form-control" id="formGroupNombreInput" placeholder=""  [(ngModel)]="turista.identificacion"  required #identificacion="ngModel">
+        </div>
+        <br>
+        <label>Tipo de documento</label>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="tipo_id" id="inlineRadio1" [(ngModel)]="turista.tipo_identificacion" value="T.I">
+            <label class="form-check-label" for="inlineRadio1">T.I</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="tipo_id" id="inlineRadio2" [(ngModel)]="turista.tipo_identificacion" value="C.C">
+            <label class="form-check-label" for="inlineRadio2">C.C</label>
+        </div>
+        <br>
+        <div class="form-groud">
+            <label for="formGroupNombreInput">Frecuencia de viaje</label>
+            <input type="text" name="frec_viajes" class="form-control" id="formGroupNombreInput" placeholder=""  [(ngModel)]="turista.frec_viajes"  required #frec_viajes="ngModel">
+        </div>
+        <br>
+        <div class="form-groud">
+            <label for="formGroupNombreInput">Presupuesto de viaje</label>
+            <input type="text" name="presupuesto" class="form-control" id="formGroupNombreInput" placeholder=""  [(ngModel)]="turista.presupuesto"  required #presupuesto="ngModel">
+        </div>
+        <br>
+        <div class="form-group">
+            <label>Destino</label>
+            <select class="form-select" aria-label="select de profesion" [(ngModel)]="turista.ciudad"  name="id_profesion" >
+                <option *ngFor=" let ciudad of ciudades" [ngValue]="ciudad">{{ ciudad.nombre }}</option>
+            </select>
+        </div>
+        <br> 
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="tarjeta" id="inlineRadio1" [(ngModel)]="turista.tarjeta" value="true">
+            <label class="form-check-label" for="inlineRadio1">Si</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="tarjeta" id="inlineRadio2" [(ngModel)]="turista.tarjeta" value="false">
+            <label class="form-check-label" for="inlineRadio2">No</label>
+        </div>
+        <br>
+        <button type="submit" class="btn btn-success" (click)="crearTurista()">Crear</button>
+        <button type="submit" class="btn btn-primary" (click)="actualizarTurista()">Actualizar</button>
+    </form>
+</div>

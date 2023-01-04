@@ -1,0 +1,26 @@
+<div class="container mt-3">
+    <h1>{{ titulo }}</h1>
+    <form>
+        <div class="form-groud">
+            <label for="formGroupNombreInput">Fecha</label>
+            <input type="text" name="fecha" class="form-control" id="formGroupNombreInput" placeholder=""  [(ngModel)]="asignacion.fecha"  required #fecha="ngModel">
+        </div>
+        <br>
+        <div class="form-group">
+            <label>Turista</label>
+            <select class="form-select" aria-label="select de profesion" [(ngModel)]="asignacion.turista"  name="id_profesion" >
+                <option *ngFor=" let turista of turistas" [ngValue]="turista">{{ turista.id }}{{ turista.nombre }}</option>
+            </select>
+        </div>
+        <br>
+        <div class="form-group">
+            <label>Ciudad</label>
+            <select class="form-select" aria-label="select de profesion" [(ngModel)]="asignacion.ciudad"  name="id_profesion" >
+                <option *ngFor=" let ciudad of ciudades" [ngValue]="ciudad">{{ ciudad.nombre }}</option>
+            </select>
+        </div>
+        <br> 
+        <button type="submit" class="btn btn-success" (click)="crearAsignacion()">Crear</button>
+        <button type="submit" class="btn btn-primary" (click)="actualizarAsignacion()">Actualizar</button>
+    </form>
+</div>

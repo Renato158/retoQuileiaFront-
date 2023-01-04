@@ -1,0 +1,27 @@
+<div class="container mt-3">
+    <h1>{{ titulo }}</h1>
+    <form>
+        <div class="form-groud">
+            <label for="formGroupNombreInput">Nombre</label>
+            <input type="text" name="nombres" class="form-control" id="formGroupNombreInput" placeholder=""  [(ngModel)]="ciudad.nombre"  required #nombre="ngModel">
+        </div>
+        <br>
+        <div class="form-groud">
+            <label for="formGroupNombreInput">Cantidad de habitantes</label>
+            <input type="text" name="habitantes" class="form-control" id="formGroupNombreInput" placeholder=""  [(ngModel)]="ciudad.habitantes"  required #habitantes="ngModel">
+        </div>
+        <br>
+        <div class="form-groud">
+            <label for="formGroupNombreInput">sitio más turistico</label>
+            <input type="text" name="sitio_turistico" class="form-control" id="formGroupNombreInput" placeholder=""  [(ngModel)]="ciudad.sitio_turistico"  required #sitio_turistico="ngModel">
+        </div>
+        <br>
+        <div class="form-groud">
+            <label for="formGroupNombreInput">Hotel mas reservado</label>
+            <input type="text" name="mejor_hotel" class="form-control" id="formGroupNombreInput" placeholder=""  [(ngModel)]="ciudad.mejor_hotel"  required #mejor_hotel="ngModel">
+        </div>
+        <br>
+        <button type="submit" class="btn btn-success" (click)="crearCiudad()">Crear</button>
+        <button type="submit" class="btn btn-primary" (click)="actualizarCiudad()">Actualizar</button>
+    </form>
+</div>

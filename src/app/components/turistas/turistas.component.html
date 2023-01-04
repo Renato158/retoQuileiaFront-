@@ -1,0 +1,39 @@
+<div class="container d-flex justify-content-center mt-3">
+  <h1>Turistas</h1>
+</div>
+<div class="contariner">
+  <button class="btn btn-primary" (click)="irAgregar()">Agregar</button>
+</div>
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Fecha nacimiento</th>
+        <th scope="col">identificacion</th>
+        <th scope="col">T. identificacion</th>
+        <th scope="col">Frecuencia viajes</th>
+        <th scope="col">Presupuesto</th>
+        <th scope="col">Destino</th>
+        <th scope="col">Tarjeta?</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let turista of turistas">
+        <th scope="row">{{ turista.id}}</th>
+        <td>{{ turista.nombre }}</td>
+        <td>{{ turista.fecha}}</td>
+        <td>{{ turista.identificacion }}</td>
+        <td>{{ turista.tipo_identificacion }}</td>
+        <td>{{ turista.frec_viajes }}</td>
+        <td>{{ turista.presupuesto }}</td>
+        <td>{{ turista.ciudad.nombre }}</td>
+        <td>{{ turista.tarjeta}}</td>
+        <td>
+          <button type="button" class="btn btn-secondary" (click)="irEditar(turista.id)">Editar</button>
+          <button type="button" class="btn btn-danger" (click)="eliminarTurista(turista.id)">Eliminar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>

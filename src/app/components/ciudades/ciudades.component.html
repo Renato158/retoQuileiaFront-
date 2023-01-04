@@ -1,0 +1,31 @@
+<div class="container d-flex justify-content-center mt-3">
+    <h1>Ciudades</h1>
+  </div>
+  <div class="contariner">
+    <button class="btn btn-primary" (click)="irAgregar()">Agregar</button>
+  </div>
+  <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">id</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">habitantes</th>
+          <th scope="col">Sitio turistico</th>
+          <th scope="col">Hotel mas reservado</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let ciudad of ciudades">
+          <th scope="row">{{ ciudad.id}}</th>
+          <td>{{ ciudad.nombre }}</td>
+          <td>{{ ciudad.habitantes }}</td>
+          <td>{{ ciudad.sitio_turistico }}</td>
+          <td>{{ ciudad.mejor_hotel }}</td>
+          <td>
+            <button type="button" class="btn btn-secondary" (click)="irEditar(ciudad.id)">Editar</button>
+            <button type="button" class="btn btn-danger" (click)="eliminarCiudad(ciudad.id)">Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>

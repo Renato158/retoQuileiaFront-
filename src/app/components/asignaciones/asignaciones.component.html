@@ -1,0 +1,45 @@
+<div class="container d-flex justify-content-center mt-3">
+    <h1>Asignaciones</h1>
+  </div>
+  <div class="contariner">
+    <div class="form-group d-flex">
+      <label>Turista: </label>
+      <select class="form-select" aria-label="select de profesion" [(ngModel)]="asignacion.turista"  name="id_turista" >
+          <option *ngFor=" let turista of turistas" [ngValue]="turista">{{ turista.nombre }}</option>
+      </select>
+      <button class="btn btn-primary" (click)="buscarTurista()">Buscar</button> 
+    </div>
+    <br>
+    <div class="form-group d-flex">
+      <label>Ciudad: </label>
+      <select class="form-select" aria-label="select de profesion" [(ngModel)]="asignacion.ciudad" name="id_ciudad">
+        <option *ngFor=" let ciudad of ciudades" [ngValue]="ciudad">{{ ciudad.nombre }}</option>
+      </select>
+      <button class="btn btn-primary" (click)="buscarCiudad()">Buscar</button>
+    </div>
+  </div>
+  <button class="btn btn-primary" (click)="irAgregar()">Agregar</button>
+  <br>
+  <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">id</th>
+          <th scope="col">Fecha</th>
+          <th scope="col">Turista</th>
+          <th scope="col">Ciudad</th>
+          <th scope="col">Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let asignacion of asignaciones">
+          <th scope="row">{{ asignacion.id }}</th>
+          <td>{{ asignacion.fecha }}</td>
+          <td>{{ asignacion.turista.nombre }}</td>
+          <td>{{ asignacion.ciudad.nombre }}</td>
+          <td>
+            <button type="button" class="btn btn-secondary" (click)="irEditar(asignacion.id)">Editar</button>
+            <button type="button" class="btn btn-danger" (click)="eliminarAsignacion(asignacion.id)">Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
